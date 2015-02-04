@@ -1,0 +1,2 @@
+﻿
+Exec [InsurerAnalyticsSupport].[BuildExtensionTriggersAndViews]

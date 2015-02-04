@@ -1,0 +1,76 @@
+2/4/2015 10:13:33 AM	This log contains information about the import schema operation into project 'SCD Extension' on computer 'UKCH7034' by user 'ramav'.
+2/4/2015 10:13:33 AM	Import of database schema has started.
+2/4/2015 10:13:33 AM	Gathering database options
+2/4/2015 10:13:33 AM	Gathering users
+2/4/2015 10:13:33 AM	Gathering roles
+2/4/2015 10:13:33 AM	Gathering application roles
+2/4/2015 10:13:33 AM	Gathering role memberships
+2/4/2015 10:13:33 AM	Gathering filegroups
+2/4/2015 10:13:33 AM	Gathering full-text catalogs
+2/4/2015 10:13:33 AM	Gathering assemblies
+2/4/2015 10:13:33 AM	Gathering certificates
+2/4/2015 10:13:33 AM	Gathering asymmetric keys
+2/4/2015 10:13:33 AM	Gathering symmetric keys
+2/4/2015 10:13:33 AM	Gathering encrypted symmetric keys
+2/4/2015 10:13:33 AM	Gathering schemas
+2/4/2015 10:13:33 AM	Gathering XML schema collections
+2/4/2015 10:13:33 AM	Gathering user-defined data types
+2/4/2015 10:13:33 AM	Gathering user-defined types
+2/4/2015 10:13:33 AM	Gathering table types
+2/4/2015 10:13:33 AM	Gathering unique keys for table types
+2/4/2015 10:13:33 AM	Gathering primary keys for table types
+2/4/2015 10:13:33 AM	Gathering check constraints for table types
+2/4/2015 10:13:33 AM	Gathering default constraints for table types
+2/4/2015 10:13:33 AM	Gathering partition functions
+2/4/2015 10:13:33 AM	Gathering partition schemes
+2/4/2015 10:13:33 AM	Gathering functions
+2/4/2015 10:13:33 AM	Gathering encrypted functions
+2/4/2015 10:13:33 AM	Gathering aggregates
+2/4/2015 10:13:33 AM	Gathering procedures
+2/4/2015 10:13:34 AM	Gathering encrypted procedures
+2/4/2015 10:13:34 AM	Gathering tables
+2/4/2015 10:13:34 AM	Gathering primary keys
+2/4/2015 10:13:34 AM	Gathering unique constraints
+2/4/2015 10:13:34 AM	Gathering foreign keys
+2/4/2015 10:13:34 AM	Gathering default constraints
+2/4/2015 10:13:34 AM	Gathering check constraints
+2/4/2015 10:13:34 AM	Gathering views
+2/4/2015 10:13:34 AM	Gathering encrypted views
+2/4/2015 10:13:34 AM	Gathering indexes
+2/4/2015 10:13:34 AM	Gathering statistics
+2/4/2015 10:13:34 AM	Gathering full-text index stoplists
+2/4/2015 10:13:34 AM	Gathering search property lists
+2/4/2015 10:13:34 AM	Gathering search properties
+2/4/2015 10:13:34 AM	Gathering full-text indexes
+2/4/2015 10:13:34 AM	Gathering column store indexes
+2/4/2015 10:13:34 AM	Gathering spatial indexes
+2/4/2015 10:13:34 AM	Gathering XML indexes
+2/4/2015 10:13:34 AM	Gathering Selective XML indexes
+2/4/2015 10:13:34 AM	Gathering encrypted triggers
+2/4/2015 10:13:34 AM	Gathering triggers
+2/4/2015 10:13:34 AM	Gathering encrypted and clr ddl triggers
+2/4/2015 10:13:34 AM	Gathering ddl triggers
+2/4/2015 10:13:34 AM	Gathering synonyms
+2/4/2015 10:13:34 AM	Gathering defaults
+2/4/2015 10:13:34 AM	Gathering data constraint uddt bindings
+2/4/2015 10:13:34 AM	Gathering rules
+2/4/2015 10:13:34 AM	Gathering data constraint uddt bindings
+2/4/2015 10:13:34 AM	Gathering message types
+2/4/2015 10:13:34 AM	Gathering queues
+2/4/2015 10:13:34 AM	Gathering contracts
+2/4/2015 10:13:34 AM	Gathering services
+2/4/2015 10:13:34 AM	Gathering event notifications
+2/4/2015 10:13:34 AM	Gathering remote service bindings
+2/4/2015 10:13:34 AM	Gathering broker priorities
+2/4/2015 10:13:34 AM	Gathering signatures
+2/4/2015 10:13:34 AM	Gathering data compression options
+2/4/2015 10:13:34 AM	Gathering sequence types
+2/4/2015 10:13:34 AM	Gathering extended properties
+2/4/2015 10:13:34 AM	Gathering credentials
+2/4/2015 10:13:34 AM	Gathering logins
+2/4/2015 10:13:34 AM	Gathering server audits
+2/4/2015 10:13:35 AM	Scanning project for duplicate elements
+2/4/2015 10:13:35 AM	Finished duplicate element processing
+2/4/2015 10:13:35 AM	Finished importing database.
+2/4/2015 10:13:35 AM	A summary of the import was saved to the following location: C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\Import Schema Logs\SCD Extension_20150204101333.log
+2/4/2015 10:13:35 AM	Click Finish to continue...

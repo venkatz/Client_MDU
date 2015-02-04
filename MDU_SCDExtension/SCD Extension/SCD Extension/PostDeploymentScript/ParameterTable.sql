@@ -1,0 +1,2 @@
+﻿Insert into  [InsurerAnalyticsSupport].[Parameter] (Name,Value,JobType,[Description],[Enabled])
+values ('Reporting Month',0,'Claims','Number of months reporting should be done on Fact Periodic snapshot table',1)
