@@ -1,0 +1,11 @@
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\bin\Debug\InsurerAnalyticsDataWarehouse__Extension.dacpac
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\bin\Debug\SCD_Extension.dll
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\bin\Debug\SCD_Extension.pdb
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\bin\Debug\InsurerAnalyticsDataWarehouse.dacpac
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\bin\Debug\master.dacpac
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\obj\Debug\Model.xml
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\obj\Debug\refactor.xml
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\obj\Debug\postdeploy.sql
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\obj\Debug\predeploy.sql
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\obj\Debug\SCD_Extension.dll
+C:\MDU_SCD\MDU_SCDExtension\SCD Extension\SCD Extension\obj\Debug\SCD_Extension.pdb

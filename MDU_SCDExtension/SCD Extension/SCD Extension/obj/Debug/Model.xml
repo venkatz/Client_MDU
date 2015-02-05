@@ -56,5 +56,4058 @@
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[Client__ExtensionId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[InsurerAnalyticsCommonDimension].[Client__Extension]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable__Extension].[ClaimantStaging__ExtensionId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable__Extension]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlTable" Name="[InsurerAnalyticsClaimsFact].[MonthlyClaimsFactPeriodicSnapshot]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsClaimsFact].[MonthlyClaimsFactPeriodicSnapshot].[Clientid]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsClaimsFact].[MonthlyClaimsFactPeriodicSnapshot].[Yearmonth]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsClaimsFact].[MonthlyClaimsFactPeriodicSnapshot].[NoOfClaims]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsFact]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable__Extension]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable__Extension].[ClaimantStaging__ExtensionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable__Extension].[ClaimantStagingTableId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable__Extension].[ClaimType]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsStaging]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="5" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[InsurerAnalyticsClaimsStaging].[FK_ClaimantStagingTableID__ExtensionID]">
+			<Property Name="IsDisabled" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable__Extension].[ClaimantStagingTableId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable__Extension]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable].[ClaimantStagingTableID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsStaging].[ClaimantStagingTable]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[InsurerAnalyticsCommonDimension].[Client__Extension]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[Client__ExtensionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[ClientLowestKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[ClientID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[claimtype]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[StartDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[EndDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="4" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[InsurerAnalyticsCommonDimension].[FK_Client_Extension_ClientID]">
+			<Property Name="IsDisabled" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[ClientID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[InsurerAnalyticsCommonDimension].[Client__Extension]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Client].[ClientID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Client]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+     DECLARE @TransactionStartTime datetime = CURRENT_TIMESTAMP;
+    BEGIN TRY
+        DECLARE @ClaimNumber varchar( 100 ),
+                @ReportingDate varchar ( 20 ),
+                @YearMonth int,
+                @CountRows int,
+                @ReportingMonth varchar( 20 ),
+                @ExtractRunID varchar( 10 )
+        SET @CountRows = ( SELECT [Parameter].[value]
+                             FROM InsurerAnalyticsSupport.[Parameter]
+                             WHERE [Parameter].Name = 'Reporting Month' )
+        
+	   SET @ReportingDate =  EOMONTH(( SELECT CONVERT( date,DATEADD( mm,-@CountRows,GETDATE( )))))
+        
+	   SET @ReportingMonth = LEFT(( SELECT CONVERT( varchar( 25 ),DATEADD( dd,-(DAY( DATEADD( mm,1,@ReportingDate ))-1),DATEADD( mm,1,@ReportingDate )),112 )),6 )
+        
+	   SET @ExtractRunID = ( SELECT [Parameter].[Value] FROM InsurerAnalyticsSupport.[Parameter]
+                                WHERE 
+						       [Parameter].JobType = 'Claims'
+                                 AND [Parameter].Name = 'ExtractRunID' )
+
+       
+	   IF @CountRows > 0
+            BEGIN
+                IF OBJECT_ID( 'tempdb..#ClientWithOpenClaims' ) IS  NOT NULL
+                    BEGIN
+                        DROP TABLE insurerAnalyticsSupport.#ClientWithOpenClaims
+                    END
+                CREATE TABLE insurerAnalyticsSupport.#ClientWithOpenClaims( claimnumber varchar( 100 ),
+                                                           YearMonth int,
+                                                           CountofClaims int )
+                ALTER TABLE insurerAnalyticsSupport.#ClientWithOpenClaims ALTER COLUMN claimnumber varchar( 100 ) COLLATE SQL_Latin1_General_CP1_CI_AS
+                
+/****** To populate Reporting month into the Temp table yearmonth (YYYYMM) **********/
+			
+			 DECLARE @i int = 1
+                IF OBJECT_ID( 'tempdb..#yearmonth' ) IS NOT NULL
+                    BEGIN
+                        DROP TABLE insurerAnalyticsSupport.#yearmonth
+                    END
+                CREATE TABLE #yearmonth( YearMonth varchar( 10 ))
+                WHILE @i <= @CountRows
+                    BEGIN
+                        INSERT INTO  #yearmonth ( YearMonth )
+                        VALUES ( @ReportingMonth )
+                        SET @ReportingMonth = LEFT( REPLACE( DATEADD( mm,1,CONVERT( date,CONCAT( @ReportingMonth,'01' ))),'-','' ),6 )
+                        SET @i=@i+1
+                    END
+				
+/********** Cursor to loop through number of months ********/
+
+                DECLARE @YearAndMonth varchar( 10 )
+                DECLARE YearMonthCursor CURSOR
+                    FOR
+                        SELECT #yearmonth.YearMonth
+                          FROM InsurerAnalyticsSupport.#yearmonth
+               
+			 OPEN YearMonthCursor
+                FETCH NEXT FROM YearMonthCursor INTO @YearAndMonth
+               
+			 WHILE @@FETCH_STATUS = 0
+                    BEGIN
+                        SET @ReportingDate = REPLACE( @ReportingDate,'-','' )
+                        INSERT INTO #ClientWithOpenClaims ( claimnumber,
+                                           YearMonth,
+                                           CountofClaims )
+                        SELECT cs.ClaimNumber,
+                               @YearAndMonth,
+                               COUNT( * )
+                          FROM
+                               InsurerAnalyticsClaimsFact.ClaimSnapshot cs INNER JOIN InsurerAnalyticsCommonDimension.Dates d
+                               ON cs.NotificationDate = d.DateId
+                          WHERE
+                               cs.NotificationDate <= @ReportingDate
+                           AND cs.SettledDate IS NULL
+                            OR (cs.NotificationDate <= @ReportingDate
+						  AND cs.SettledDate > @ReportingDate)
+                          GROUP BY cs.ClaimNumber
+                        SET @ReportingDate = REPLACE( eomonth( DATEADD( mm,1,CONVERT( date,@reportingDate ))),'-','' )
+                        FETCH NEXT FROM YearMonthCursor INTO @YearAndMonth
+                    END
+                CLOSE YearMonthCursor
+                DEALLOCATE yearmonthcursor
+
+                     
+/*********** Inserting into the Table MonthlyClaimsFactPeriodicSnapshot ************/
+
+	   TRUNCATE TABLE InsurerAnalyticsClaimsFact.MonthlyClaimsFactPeriodicSnapshot
+	   INSERT INTO   InsurerAnalyticsClaimsFact.MonthlyClaimsFactPeriodicSnapshot ( ClientID,
+																	   YearMonth,
+																	   NoOfClaims )
+	   SELECT v.clientid ,
+			 t.yearmonth,
+			 COUNT( t.countofclaims )
+		  FROM
+			 InsurerAnalyticsCommonDimension.VW__Client v 
+			 INNER JOIN InsurerAnalyticsClaimsDimension.BridgeClaimantClient b
+			 ON v.ClientID = b.ClientID
+			 INNER JOIN InsurerAnalyticsSupport.#ClientWithOpenClaims t
+			 ON B.ClaimNumber = t.claimnumber
+		  WHERE v.EndDate IS NULL  ----Active Client
+		  GROUP BY   v.clientId,
+				    t.yearmonth
+
+ /*********** Audit **********************/
+
+        DECLARE @TransactionEndTime datetime = CURRENT_TIMESTAMP
+	   DECLARE @AuditCount int
+        SET @AuditCount = ( SELECT COUNT( * )
+                                FROM InsurerAnalyticsClaimsFact.MonthlyClaimsFactPeriodicSnapshot )
+			               
+	   EXEC InsurerAnalyticsSupport.CreateAuditRecord
+	   @JobType = N'Claims',
+	   @ExtractRunID = @ExtractRunID,
+	   @AuditItem = N'Monthly Periodic Snapshot Fact',
+	   @AuditSubItem = N'Monthly Periodic Snapshot Fact',
+	   @AuditStatus = N'SUCCESS',
+	   @AuditCount = @AuditCount,
+	   @AuditComment = N'Records loaded to Monthly periodic Snapshot',
+	   @AuditStartDate = @TransactionStartTime,
+	   @AuditCompletionDate = @TransactionEndTime,
+	   @AuditType = 'Audit';
+			
+			
+END
+     
+ELSE
+  BEGIN
+	   SET @TransactionEndTime = CURRENT_TIMESTAMP
+	   EXEC InsurerAnalyticsSupport.CreateAuditRecord
+	   @JobType = N'Claims',
+	   @ExtractRunID = @ExtractRunID,
+	   @AuditItem = N'Monthly Periodic Snapshot Fact',
+	   @AuditSubItem = N'Monthly Periodic Snapshot Fact',
+	   @AuditStatus = N'FAILURE',
+	   @AuditCount = @AuditCount,
+	   @AuditComment = N'The Reporting month cannot be Null or Zero',
+	   @AuditStartDate = @TransactionStartTime,
+	   @AuditCompletionDate = @TransactionEndTime,
+	   @AuditType = 'Audit',
+	   @ErrorDetail = N'The Reporting month cannot be Null or Zero'
+			
+END
+    END TRY
+   
+    BEGIN CATCH
+        DECLARE @ErrorMessage varchar( 2000 ) = NULL;
+        SET @TransactionEndTime = CURRENT_TIMESTAMP
+	   SET @ErrorMessage = '(error: ' + CONVERT( varchar, ERROR_NUMBER( )) + ', line: ' + CONVERT( varchar, ERROR_LINE( )) + ') ' + ERROR_MESSAGE( ) 
+       
+	   EXEC InsurerAnalyticsSupport.CreateAuditRecord
+	   @JobType = N'Claims',
+	   @ExtractRunID = @ExtractRunID,
+	   @AuditItem = N'Monthly Periodic Snapshot Fact',
+	   @AuditSubItem = N'Monthly Periodic Snapshot Fact',
+	   @AuditStatus = N'FAILURE',
+	   @AuditCount = @AuditCount,
+	   @AuditComment = N'Error in the procedure',
+	   @AuditStartDate = @TransactionStartTime,
+	   @AuditCompletionDate = @TransactionEndTime,
+	   @AuditType = 'Error',
+	   @ErrorDetail = @ErrorMessage;
+       
+END CATCH;
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[Parameter]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[Parameter].[Value]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[Parameter].[Name]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[Parameter].[Value]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[Parameter].[JobType]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#yearmonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#yearmonth].[YearMonth]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#yearmonth].[YearMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[claimnumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[YearMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[CountofClaims]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsFact].[ClaimSnapshot]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Dates]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsFact].[ClaimSnapshot].[NotificationDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Dates].[DateId]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsFact].[ClaimSnapshot].[ClaimNumber]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsFact].[ClaimSnapshot].[SettledDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsClaimsFact].[MonthlyClaimsFactPeriodicSnapshot]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsClaimsFact].[MonthlyClaimsFactPeriodicSnapshot].[Clientid]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsClaimsFact].[MonthlyClaimsFactPeriodicSnapshot].[Yearmonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsClaimsFact].[MonthlyClaimsFactPeriodicSnapshot].[NoOfClaims]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[ClientID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[ClaimNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[claimnumber]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[YearMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[CountofClaims]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@JobType]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@ExtractRunID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditItem]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditSubItem]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditStatus]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditCount]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditComment]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditStartDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditCompletionDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditType]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@ErrorDetail]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[claimnumber]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="Length" Value="100" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[varchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[YearMonth]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#ClientWithOpenClaims].[CountofClaims]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#yearmonth]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact].[#yearmonth].[YearMonth]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="Length" Value="10" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[varchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="7408" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROC   [InsurerAnalyticsSupport].[MonthlyPeriodicSnapshotFact] &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+SET NOCOUNT ON
+SET XACT_ABORT ON
+SET CONCAT_NULL_YIELDS_NULL OFF;
+
+BEGIN TRY
+    
+    BEGIN TRAN ALL_OR_NOTHING
+    
+    DECLARE @BridgeRecordsRead int = 0;
+    
+    UPDATE InsurerAnalyticsCommonDimension.VW__Client
+    
+	   SET VW__Client.CounterFlag = NULL;
+    
+    UPDATE InsurerAnalyticsClaimsDimension.BridgeClaimantClient
+	   
+	   SET BridgeClaimantClient.CounterFlag = NULL;
+
+    --*
+    --* If there no records in the Staging table for this extract run id then quit. Else  do Type 2 SCD update of the Client table.
+    --*
+
+    IF EXISTS ( SELECT 1 FROM InsurerAnalyticsClaimsStaging.VW__ClaimantStagingTable
+                  WHERE VW__ClaimantStagingTable.ExtractRunID = @ExtractRunID )
+        BEGIN
+
+            --*
+            --* Populate a temporary table with the new/updated Client data
+            --*
+
+            SELECT * INTO #ClaimsClientDimension
+              FROM (
+				SELECT * FROM (
+							 SELECT ROW_NUMBER( ) OVER ( PARTITION BY ClaimantStaging.OriginalClaimantID ORDER BY ClaimantStaging.ClaimNumber ) AS Priority,
+							 ClaimantStaging.OriginalClaimantID,
+							 ClaimantStaging.PolicyNumber,
+							 ClaimantStaging.PolicyHolderID,
+							 ClaimantStaging.ClaimNumber,
+							 ClaimantStaging.ClaimType,
+							 ClaimantStaging.PartyTypeCode,
+							 ClaimantStaging.PartyType,
+							 ClaimantStaging.ClaimantFullName,
+							 ClaimantStaging.OriginalHomeID,
+							 ClaimantStaging.HomeAddressLine1,
+							 ClaimantStaging.HomeAddressLine2,
+							 ClaimantStaging.HomeCityCode,
+							 ClaimantStaging.HomeCityName,
+							 ClaimantStaging.HomeStateCode,
+							 ClaimantStaging.HomeStateName,
+							 ClaimantStaging.HomePostCode AS HomePostalCode,
+							 ClaimantStaging.HomeCountryCode,
+							 ClaimantStaging.HomeCountryName,
+							 ClaimantStaging.HomeCountyCode,
+							 ClaimantStaging.HomeCountyName,
+							 ClaimantStaging.HomeLatitude,
+							 ClaimantStaging.HomeLongitude,
+							 ClaimantStaging.OriginalBusinessID,
+							 ClaimantStaging.BusinessAddressLine1,
+							 ClaimantStaging.BusinessAddressLine2,
+							 ClaimantStaging.BusinessCityCode,
+							 ClaimantStaging.BusinessCityName,
+							 ClaimantStaging.BusinessStateCode,
+							 ClaimantStaging.BusinessStateName,
+							 ClaimantStaging.BusinessPostCode AS BusinessPostalcode,
+							 ClaimantStaging.BusinessCountryCode,
+							 ClaimantStaging.BusinessCountryName,
+							 ClaimantStaging.BusinessCountyCode,
+							 ClaimantStaging.BusinessCountyName,
+							 ClaimantStaging.BusinessLatitude,
+							 ClaimantStaging.BusinessLongitude,
+							 ClaimantStaging.OriginalOtherID,
+							 ClaimantStaging.OtherAddressLine1,
+							 ClaimantStaging.OtherAddressLine2,
+							 ClaimantStaging.OtherCityCode,
+							 ClaimantStaging.OtherCityName,
+							 ClaimantStaging.OtherStateCode,
+							 ClaimantStaging.OtherStateName,
+							 ClaimantStaging.OtherCountyCode,
+							 ClaimantStaging.OtherCountyName,
+							 ClaimantStaging.OtherPostCode AS OtherPostalCode,
+							 ClaimantStaging.OtherCountryCode,
+							 ClaimantStaging.OtherCountryName,
+							 ClaimantStaging.OtherLatitude,
+							 ClaimantStaging.OtherLongitude,
+							 CAST( NULL AS int ) AS ClientID,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 1,ClaimantStaging.HomeCountryCode,ClaimantStaging.HomePostCode,ClaimantStaging.HomeStateName ) AS HomeGeoMapCode1,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 2,ClaimantStaging.HomeCountryCode,ClaimantStaging.HomePostCode,ClaimantStaging.HomeStateName ) AS HomeGeoMapCode2,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 3,ClaimantStaging.HomeCountryCode,ClaimantStaging.HomePostCode,ClaimantStaging.HomeStateName ) AS HomeGeoMapCode3,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 4,ClaimantStaging.HomeCountryCode,ClaimantStaging.HomePostCode,ClaimantStaging.HomeStateName ) AS HomeGeoMapCode4,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 1,ClaimantStaging.BusinessCountryCode,ClaimantStaging.BusinessPostCode,ClaimantStaging.BusinessStateName ) AS BusinessGeoMapCode1,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 2,ClaimantStaging.BusinessCountryCode,ClaimantStaging.BusinessPostCode,ClaimantStaging.BusinessStateName ) AS BusinessGeoMapCode2,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 3,ClaimantStaging.BusinessCountryCode,ClaimantStaging.BusinessPostCode,ClaimantStaging.BusinessStateName ) AS BusinessGeoMapCode3,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 4,ClaimantStaging.BusinessCountryCode,ClaimantStaging.BusinessPostCode,ClaimantStaging.BusinessStateName ) AS BusinessGeoMapCode4,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 1,ClaimantStaging.OtherCountryCode,ClaimantStaging.OtherPostCode,ClaimantStaging.OtherStateName ) AS OtherGeoMapCode1,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 2,ClaimantStaging.OtherCountryCode,ClaimantStaging.OtherPostCode,ClaimantStaging.OtherStateName ) AS OtherGeoMapCode2,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 3,ClaimantStaging.OtherCountryCode,ClaimantStaging.OtherPostCode,ClaimantStaging.OtherStateName ) AS OtherGeoMapCode3,
+							 InsurerAnalyticsSupport.DeriveGeoMapCode( 4,ClaimantStaging.OtherCountryCode,ClaimantStaging.OtherPostCode,ClaimantStaging.OtherStateName ) AS OtherGeoMapCode4
+							 
+							 FROM InsurerAnalyticsClaimsStaging.VW__ClaimantStagingTable AS ClaimantStaging
+							 WHERE ClaimantStaging.ExtractRunID = @ExtractRunID 
+							 ) AS Claimants
+								  
+							  WHERE Claimants.Priority = 1 ) AS TempTable;
+
+            --*
+            --* Get Count of Records before load
+            --*
+
+            SET @RecordsRead = ( SELECT COUNT( * )
+                                   FROM ( SELECT ROW_NUMBER( ) OVER ( PARTITION BY #ClaimsClientDimension.PolicyHolderID ORDER BY #ClaimsClientDimension.OriginalClaimantID ) AS RowNum
+                                            FROM InsurerAnalyticsSupport.#ClaimsClientDimension
+                                            WHERE #ClaimsClientDimension.PolicyholderID IS NOT NULL ) AS Client
+                                   WHERE Client.Rownum = 1 );
+
+            --*
+            --* merge policyholder
+            --*
+
+            /****** Creating temp table for Distinct client based on policy holder id *******/
+
+            SELECT * INTO #DistinctClientPolicyNotNull
+              FROM ( SELECT * FROM
+						  
+						  (SELECT *,ROW_NUMBER( ) OVER ( PARTITION BY #ClaimsClientDimension.PolicyHolderID ORDER BY #ClaimsClientDimension.OriginalClaimantID ) AS RowNum
+						    FROM InsurerAnalyticsSupport.#ClaimsClientDimension
+						    WHERE #ClaimsClientDimension.PolicyholderID IS NOT NULL ) AS TblA 
+						    )
+						    
+						    AS B
+						    WHERE B.Rownum = 1
+
+            /******  Performing Merge *******/
+
+            MERGE
+            InsurerAnalyticsCommonDimension.VW__Client AS Target
+            USING
+            InsurerAnalyticsSupport.#DistinctClientPolicyNotNull AS Source
+            ON
+            Target.ClientCode = Source.PolicyHolderID
+            WHEN NOT MATCHED
+                  THEN INSERT
+                  (
+                  ClientCode,
+                  ClientName,
+                  ClaimantID,
+                  claimtype,
+                  PolicyHolderID,
+                  HomeAddressOriginalID,
+                  HomeAddressLine1,
+                  HomeAddressLine2,
+                  HomeCity,
+                  HomeCountyName,
+                  HomeState,
+                  HomeCountry,
+                  HomePostalCode,
+                  BusinessAddressOriginalID,
+                  BusinessAddressLine1,
+                  BusinessAddressLine2,
+                  BusinessCityName,
+                  BusinessCountyName,
+                  BusinessStateName,
+                  BusinessCountryName,
+                  BusinessPostalCode,
+                  OtherAddressOriginalID,
+                  OtherAddressLine1,
+                  OtherAddressLine2,
+                  OtherCityName,
+                  OtherCountyName,
+                  OtherStateName,
+                  OtherCountryName,
+                  OtherPostalCode,
+                  HomeGeoMapCode1,
+                  HomeGeoMapCode2,
+                  HomeGeoMapCode3,
+                  HomeGeoMapCode4,
+                  BusinessGeoMapCode1,
+                  BusinessGeoMapCode2,
+                  BusinessGeoMapCode3,
+                  BusinessGeoMapCode4,
+                  OtherGeoMapCode1,
+                  OtherGeoMapCode2,
+                  OtherGeoMapCode3,
+                  OtherGeoMapCode4,
+                  HomeLatitude,
+                  HomeLongitude,
+                  BusinessLatitude,
+                  BusinessLongitude,
+                  OtherLatitude,
+                  OtherLongitude,
+                  CounterFlag,
+                  StartDate
+                  )
+                  VALUES
+                  (
+                  Source.PolicyHolderID,
+                  Source.ClaimantFullName,
+                  Source.OriginalClaimantID,
+                  source.claimtype,
+                  Source.PolicyHolderID,
+                  Source.OriginalHomeID,
+                  Source.HomeAddressLine1,
+                  Source.HomeAddressLine2,
+                  Source.HomeCityName,
+                  Source.HomeCountyName,
+                  Source.HomeStateName,
+                  Source.HomeCountryName,
+                  Source.HomePostalCode,
+                  Source.OriginalBusinessID,
+                  Source.BusinessAddressLine1,
+                  Source.BusinessAddressLine2,
+                  Source.BusinessCityName,
+                  Source.BusinessCountyName,
+                  Source.BusinessStateName,
+                  Source.BusinessCountryName,
+                  Source.BusinessPostalCode,
+                  Source.OriginalOtherID,
+                  Source.OtherAddressLine1,
+                  Source.OtherAddressLine2,
+                  Source.OtherCityName,
+                  Source.OtherCountyName,
+                  Source.OtherStateName,
+                  Source.OtherCountryName,
+                  Source.OtherPostalCode,
+                  Source.HomeGeoMapCode1,
+                  Source.HomeGeoMapCode2,
+                  Source.HomeGeoMapCode3,
+                  Source.HomeGeoMapCode4,
+                  Source.BusinessGeoMapCode1,
+                  Source.BusinessGeoMapCode2,
+                  Source.BusinessGeoMapCode3,
+                  Source.BusinessGeoMapCode4,
+                  Source.OtherGeoMapCode1,
+                  Source.OtherGeoMapCode2,
+                  Source.OtherGeoMapCode3,
+                  Source.OtherGeoMapCode4,
+                  Source.HomeLatitude,
+                  Source.HomeLongitude,
+                  Source.BusinessLatitude,
+                  Source.BusinessLongitude,
+                  Source.OtherLatitude,
+                  Source.OtherLongitude,
+                  'N',
+                  CONVERT( char( 10 ), CURRENT_TIMESTAMP - 1, 101 )
+                  )
+            WHEN MATCHED AND
+                   (
+                   ISNULL( Target.ClientName, '' ) <> ISNULL( Source.ClaimantFullName, '' )
+                OR
+
+                   ISNull( Target.HomeAddressLine1, '' ) <> ISNULL( Source.HomeAddressLine1, '' )
+                OR ISNULL( Target.HomeAddressLine2, '' ) <> ISNULL( Source.HomeAddressLine2, '' )
+                OR ISNULL( Target.HomeCity, '' ) <> ISNULL( Source.HomeCityName, '' )
+                OR ISNULL( Target.HomeCountyName, '' ) <> ISNULL( Source.HomeCountyName, '' )
+                OR ISNULL( Target.HomeState, '' ) <> ISNULL( Source.HomeStateName, '' )
+                OR ISNULL( Target.HomeCountry, '' ) <> ISNULL( Source.HomeCountryName, '' )
+                OR ISNULL( Target.HomePostalCode, '' ) <> ISNULL( Source.HomePostalCode, '' )
+                   )
+               AND Target.EndDate IS NULL
+                  THEN UPDATE
+                  SET Target.EndDate = CONVERT( char( 10 ),CURRENT_TIMESTAMP - 1, 101 ),
+                      Target.CounterFlag = 'D';
+
+            --Insert expired records into view
+
+            INSERT INTO InsurerAnalyticsCommonDimension.VW__Client
+            (
+            ClientCode,
+            ClientName,
+            ClaimantID,
+            claimtype,
+            PolicyHolderID,
+            HomeAddressOriginalID,
+            HomeAddressLine1,
+            HomeAddressLine2,
+            HomeCity,
+            HomeCountyName,
+            HomeState,
+            HomeCountry,
+            HomePostalCode,
+            BusinessAddressOriginalID,
+            BusinessAddressLine1,
+            BusinessAddressLine2,
+            BusinessCityName,
+            BusinessCountyName,
+            BusinessStateName,
+            BusinessCountryName,
+            BusinessPostalCode,
+            OtherAddressOriginalID,
+            OtherAddressLine1,
+            OtherAddressLine2,
+            OtherCityName,
+            OtherCountyName,
+            OtherStateName,
+            OtherCountryName,
+            OtherPostalCode,
+            HomeGeoMapCode1,
+            HomeGeoMapCode2,
+            HomeGeoMapCode3,
+            HomeGeoMapCode4,
+            BusinessGeoMapCode1,
+            BusinessGeoMapCode2,
+            BusinessGeoMapCode3,
+            BusinessGeoMapCode4,
+            OtherGeoMapCode1,
+            OtherGeoMapCode2,
+            OtherGeoMapCode3,
+            OtherGeoMapCode4,
+            HomeLatitude,
+            HomeLongitude,
+            BusinessLatitude,
+            BusinessLongitude,
+            OtherLatitude,
+            OtherLongitude,
+            CounterFlag,
+            StartDate
+            )
+            SELECT
+            Source.PolicyHolderID,
+            Source.ClaimantFullName,
+            Source.OriginalClaimantID,
+            Source.ClaimType,
+            Source.PolicyHolderID,
+            Source.OriginalHomeID,
+            Source.HomeAddressLine1,
+            Source.HomeAddressLine2,
+            Source.HomeCityName,
+            Source.HomeCountyName,
+            Source.HomeStateName,
+            Source.HomeCountryName,
+            Source.HomePostalCode,
+            Source.OriginalBusinessID,
+            Source.BusinessAddressLine1,
+            Source.BusinessAddressLine2,
+            Source.BusinessCityName,
+            Source.BusinessCountyName,
+            Source.BusinessStateName,
+            Source.BusinessCountryName,
+            Source.BusinessPostalCode,
+            Source.OriginalOtherID,
+            Source.OtherAddressLine1,
+            Source.OtherAddressLine2,
+            Source.OtherCityName,
+            Source.OtherCountyName,
+            Source.OtherStateName,
+            Source.OtherCountryName,
+            Source.OtherPostalCode,
+            Source.HomeGeoMapCode1,
+            Source.HomeGeoMapCode2,
+            Source.HomeGeoMapCode3,
+            Source.HomeGeoMapCode4,
+            Source.BusinessGeoMapCode1,
+            Source.BusinessGeoMapCode2,
+            Source.BusinessGeoMapCode3,
+            Source.BusinessGeoMapCode4,
+            Source.OtherGeoMapCode1,
+            Source.OtherGeoMapCode2,
+            Source.OtherGeoMapCode3,
+            Source.OtherGeoMapCode4,
+            Source.HomeLatitude,
+            Source.HomeLongitude,
+            Source.BusinessLatitude,
+            Source.BusinessLongitude,
+            Source.OtherLatitude,
+            Source.OtherLongitude,
+            'C',
+            CONVERT( char( 10 ), CURRENT_TIMESTAMP - 1, 101 )
+              FROM
+                   InsurerAnalyticsSupport.#DistinctClientPolicyNotNull Source INNER JOIN
+                   InsurerAnalyticsCommonDimension.VW__Client Target
+                   ON
+                   Target.ClientCode = Source.PolicyHolderID
+              WHERE
+              Target.CounterFlag = 'D';
+            SET @RecordsRead = @recordsRead + ( SELECT COUNT( * )
+                                                  FROM ( SELECT ROW_NUMBER( ) OVER ( PARTITION BY #ClaimsClientDimension.OriginalClaimantID ORDER BY #ClaimsClientDimension.OriginalClaimantID ) AS RowNum
+                                                           FROM InsurerAnalyticsSupport.#ClaimsClientDimension
+                                                           WHERE #ClaimsClientDimension.PolicyholderID IS NULL ) AS Client
+                                                  WHERE Client.RowNum = 1 );
+
+            --*
+            --* merge claimants
+            --*
+/************Creating Temp table for Policy holder ID is Null **************/
+
+            SELECT * INTO #DistinctClientPolicyNull
+              FROM 
+              (SELECT * FROM
+				    
+				    ( SELECT *,ROW_NUMBER( ) OVER ( PARTITION BY #ClaimsClientDimension.PolicyHolderID ORDER BY #ClaimsClientDimension.OriginalClaimantID ) AS RowNum
+				      FROM InsurerAnalyticsSupport.#ClaimsClientDimension
+					 WHERE #ClaimsClientDimension.PolicyholderID IS NULL ) AS TblA 
+					 
+					 )AS B
+					 
+					 WHERE B.Rownum = 1
+
+/************* Performing Merge ************************/
+
+            MERGE
+            InsurerAnalyticsCommonDimension.VW__Client AS Target
+            USING
+            InsurerAnalyticsSupport.#DistinctClientPolicyNull  AS Source
+            ON Target.ClaimantID = Source.OriginalClaimantID
+            WHEN NOT MATCHED
+                  THEN INSERT
+                  (
+                  ClientCode,
+                  ClientName,
+                  ClaimantID,
+                  claimtype,
+                  PolicyHolderID,
+                  HomeAddressOriginalID,
+                  HomeAddressLine1,
+                  HomeAddressLine2,
+                  HomeCity,
+                  HomeCountyName,
+                  HomeState,
+                  HomeCountry,
+                  HomePostalCode,
+                  BusinessAddressOriginalID,
+                  BusinessAddressLine1,
+                  BusinessAddressLine2,
+                  BusinessCityName,
+                  BusinessCountyName,
+                  BusinessStateName,
+                  BusinessCountryName,
+                  BusinessPostalCode,
+                  OtherAddressOriginalID,
+                  OtherAddressLine1,
+                  OtherAddressLine2,
+                  OtherCityName,
+                  OtherCountyName,
+                  OtherStateName,
+                  OtherCountryName,
+                  OtherPostalCode,
+                  HomeGeoMapCode1,
+                  HomeGeoMapCode2,
+                  HomeGeoMapCode3,
+                  HomeGeoMapCode4,
+                  BusinessGeoMapCode1,
+                  BusinessGeoMapCode2,
+                  BusinessGeoMapCode3,
+                  BusinessGeoMapCode4,
+                  OtherGeoMapCode1,
+                  OtherGeoMapCode2,
+                  OtherGeoMapCode3,
+                  OtherGeoMapCode4,
+                  HomeLatitude,
+                  HomeLongitude,
+                  BusinessLatitude,
+                  BusinessLongitude,
+                  OtherLatitude,
+                  OtherLongitude,
+                  CounterFlag,
+                  StartDate
+                  )
+                  VALUES
+                  (
+                  Source.PolicyHolderID,
+                  Source.ClaimantFullName,
+                  Source.OriginalClaimantID,
+                  source.claimtype,
+                  Source.PolicyHolderID,
+                  Source.OriginalHomeID,
+                  Source.HomeAddressLine1,
+                  Source.HomeAddressLine2,
+                  Source.HomeCityName,
+                  Source.HomeCountyName,
+                  Source.HomeStateName,
+                  Source.HomeCountryName,
+                  Source.HomePostalCode,
+                  Source.OriginalBusinessID,
+                  Source.BusinessAddressLine1,
+                  Source.BusinessAddressLine2,
+                  Source.BusinessCityName,
+                  Source.BusinessCountyName,
+                  Source.BusinessStateName,
+                  Source.BusinessCountryName,
+                  Source.BusinessPostalCode,
+                  Source.OriginalOtherID,
+                  Source.OtherAddressLine1,
+                  Source.OtherAddressLine2,
+                  Source.OtherCityName,
+                  Source.OtherCountyName,
+                  Source.OtherStateName,
+                  Source.OtherCountryName,
+                  Source.OtherPostalCode,
+                  Source.HomeGeoMapCode1,
+                  Source.HomeGeoMapCode2,
+                  Source.HomeGeoMapCode3,
+                  Source.HomeGeoMapCode4,
+                  Source.BusinessGeoMapCode1,
+                  Source.BusinessGeoMapCode2,
+                  Source.BusinessGeoMapCode3,
+                  Source.BusinessGeoMapCode4,
+                  Source.OtherGeoMapCode1,
+                  Source.OtherGeoMapCode2,
+                  Source.OtherGeoMapCode3,
+                  Source.OtherGeoMapCode4,
+                  Source.HomeLatitude,
+                  Source.HomeLongitude,
+                  Source.BusinessLatitude,
+                  Source.BusinessLongitude,
+                  Source.OtherLatitude,
+                  Source.OtherLongitude,
+                  'N',
+                  CONVERT( char( 10 ), CURRENT_TIMESTAMP - 1, 101 ))
+            WHEN MATCHED AND
+                   ISNULL( Target.ClientName, '' ) <> ISNULL( Source.ClaimantFullName, '' )
+                OR
+			    ISNull( Target.HomeAddressLine1, '' ) <> ISNULL( Source.HomeAddressLine1, '' )
+                OR ISNULL( Target.HomeAddressLine2, '' ) <> ISNULL( Source.HomeAddressLine2, '' )
+                OR ISNULL( Target.HomeCity, '' ) <> ISNULL( Source.HomeCityName, '' )
+                OR ISNULL( Target.HomeCountyName, '' ) <> ISNULL( Source.HomeCountyName, '' )
+                OR ISNULL( Target.HomeState, '' ) <> ISNULL( Source.HomeStateName, '' )
+                OR ISNULL( Target.HomeCountry, '' ) <> ISNULL( Source.HomeCountryName, '' )
+                OR ISNULL( Target.HomePostalCode, '' ) <> ISNULL( Source.HomePostalCode, '' )
+                  THEN UPDATE
+                  SET Target.EndDate = CONVERT( char( 10 ),CURRENT_TIMESTAMP - 1, 101 ),
+                      Target.CounterFlag = 'E';
+
+            ---------Insert Expired Record
+
+            INSERT INTO InsurerAnalyticsCommonDimension.VW__Client
+            (
+            ClientCode,
+            ClientName,
+            ClaimantID,
+            claimtype,
+            PolicyHolderID,
+            HomeAddressOriginalID,
+            HomeAddressLine1,
+            HomeAddressLine2,
+            HomeCity,
+            HomeCountyName,
+            HomeState,
+            HomeCountry,
+            HomePostalCode,
+            BusinessAddressOriginalID,
+            BusinessAddressLine1,
+            BusinessAddressLine2,
+            BusinessCityName,
+            BusinessCountyName,
+            BusinessStateName,
+            BusinessCountryName,
+            BusinessPostalCode,
+            OtherAddressOriginalID,
+            OtherAddressLine1,
+            OtherAddressLine2,
+            OtherCityName,
+            OtherCountyName,
+            OtherStateName,
+            OtherCountryName,
+            OtherPostalCode,
+            HomeGeoMapCode1,
+            HomeGeoMapCode2,
+            HomeGeoMapCode3,
+            HomeGeoMapCode4,
+            BusinessGeoMapCode1,
+            BusinessGeoMapCode2,
+            BusinessGeoMapCode3,
+            BusinessGeoMapCode4,
+            OtherGeoMapCode1,
+            OtherGeoMapCode2,
+            OtherGeoMapCode3,
+            OtherGeoMapCode4,
+            HomeLatitude,
+            HomeLongitude,
+            BusinessLatitude,
+            BusinessLongitude,
+            OtherLatitude,
+            OtherLongitude,
+            CounterFlag,
+            StartDate
+            )
+            SELECT
+            Source.PolicyHolderID,
+            Source.ClaimantFullName,
+            Source.OriginalClaimantID,
+            Source.ClaimType,
+            Source.PolicyHolderID,
+            Source.OriginalHomeID,
+            Source.HomeAddressLine1,
+            Source.HomeAddressLine2,
+            Source.HomeCityName,
+            Source.HomeCountyName,
+            Source.HomeStateName,
+            Source.HomeCountryName,
+            Source.HomePostalCode,
+            Source.OriginalBusinessID,
+            Source.BusinessAddressLine1,
+            Source.BusinessAddressLine2,
+            Source.BusinessCityName,
+            Source.BusinessCountyName,
+            Source.BusinessStateName,
+            Source.BusinessCountryName,
+            Source.BusinessPostalCode,
+            Source.OriginalOtherID,
+            Source.OtherAddressLine1,
+            Source.OtherAddressLine2,
+            Source.OtherCityName,
+            Source.OtherCountyName,
+            Source.OtherStateName,
+            Source.OtherCountryName,
+            Source.OtherPostalCode,
+            Source.HomeGeoMapCode1,
+            Source.HomeGeoMapCode2,
+            Source.HomeGeoMapCode3,
+            Source.HomeGeoMapCode4,
+            Source.BusinessGeoMapCode1,
+            Source.BusinessGeoMapCode2,
+            Source.BusinessGeoMapCode3,
+            Source.BusinessGeoMapCode4,
+            Source.OtherGeoMapCode1,
+            Source.OtherGeoMapCode2,
+            Source.OtherGeoMapCode3,
+            Source.OtherGeoMapCode4,
+            Source.HomeLatitude,
+            Source.HomeLongitude,
+            Source.BusinessLatitude,
+            Source.BusinessLongitude,
+            Source.OtherLatitude,
+            Source.OtherLongitude,
+            'N',
+            CONVERT( char( 10 ), CURRENT_TIMESTAMP - 1, 101 )
+              FROM
+                   #DistinctClientPolicyNull Source INNER JOIN
+                   InsurerAnalyticsCommonDimension.VW__Client Target
+                   ON
+                   Target.ClaimantID = Source.OriginalClaimantID
+              WHERE
+              Target.CounterFlag = 'E';
+            DECLARE @TransactionStartTime datetime = CURRENT_TIMESTAMP;
+
+            --*
+            --* update bridge table
+            --*
+
+            MERGE
+            InsurerAnalyticsClaimsDimension.BridgeClaimantClient AS Target
+            USING
+            (
+            SELECT DISTINCT
+            ClientStaging.ClaimNumber,
+            ClientStaging.PolicyholderID,
+            ClientStaging.OriginalClaimantID AS ClaimantID,
+            Client.clientID,
+            PartyType,
+            PartyTypeCode
+              FROM
+                   #ClaimsClientDimension AS ClientStaging LEFT JOIN
+                   InsurerAnalyticsCommonDimension.VW__Client AS Client
+                   ON
+                   Client.policyholderid = ClientStaging.policyholderid
+              WHERE
+              ClientStaging.PolicyHolderID IS NOT NULL
+            UNION
+            SELECT DISTINCT
+            ClientStaging.ClaimNumber,
+            ClientStaging.PolicyholderID,
+            ClientStaging.OriginalClaimantID AS ClaimantID,
+            Client.ClientID,
+            PartyType,
+            PartyTypeCode
+              FROM
+                   #ClaimsClientDimension AS ClientStaging LEFT JOIN
+                   InsurerAnalyticsCommonDimension.Vw__Client AS Client
+                   ON
+                   Client.ClaimantID = ClientStaging.OriginalClaimantID
+              WHERE
+              ClientStaging.PolicyHolderID IS NULL
+            ) AS Source
+            ON
+                   Source.ClaimantID = Target.OriginalClaimantID
+               AND Target.ClaimNumber = Source.ClaimNumber
+               AND Target.partytypecode = Source.partytypecode
+
+            -- Business key
+
+            WHEN NOT MATCHED
+                  THEN INSERT
+                  (
+                  ClientID,
+                  ClaimNumber,
+                  OriginalClaimantID,
+                  OriginalClientID,
+                  partytypecode,
+                  partytype,
+                  CounterFlag
+                  )
+                  VALUES
+                  (
+                  Source.ClientID,
+                  Source.ClaimNumber,
+                  Source.ClaimantID,
+                  Source.PolicyholderID,
+                  Source.PartyTypeCode,
+                  Source.PartyType,
+                  'N'
+                  );
+            SET @BridgeRecordsRead = ( SELECT COUNT( * )
+                                         FROM #ClaimsClientDimension );
+        END
+    DECLARE @TransactionEndTime datetime = CURRENT_TIMESTAMP;
+
+    --*
+    --* Get Audit Counts
+    --*
+    --* bridge
+    --*
+
+    SELECT
+    @NewRecords = ISNULL( SUM( IIF( CounterFlag = 'N', 1, 0 )),0 ),
+    @ChangedRecords = ISNULL( SUM( IIF( CounterFlag = 'C', 1, 0 )),0 ),
+    @RecordsRead = ISNULL( @RecordsRead,0 )
+      FROM InsurerAnalyticsClaimsDimension.BridgeClaimantClient;
+
+    --DECLARE @BridgeRecordsRead int = (SELECT count(*) FROM #ClaimsClientDimension );
+
+    EXEC InsurerAnalyticsSupport.CreateAuditRecord
+    @JobType = N'Claims',
+    @ExtractRunID = @ExtractRunID,
+    @AuditItem = N'BaseLoadFactsAndDimensions',
+    @AuditSubItem = N'Bridge Claimant Client',
+    @AuditStatus = N'SUCCESS',
+    @AuditCount = @BridgeRecordsRead,
+    @AuditComment = N'Records Read',
+    @AuditStartDate = @TransactionStartTime,
+    @AuditCompletionDate = @TransactionEndTime,
+    @AuditType = 'Audit';
+    EXEC InsurerAnalyticsSupport.CreateAuditRecord
+    @JobType = N'Claims',
+    @ExtractRunID = @ExtractRunID,
+    @AuditItem = N'BaseLoadFactsAndDimensions',
+    @AuditSubItem = N'Bridge Claimant Client',
+    @AuditStatus = N'SUCCESS',
+    @AuditCount = @NewRecords,
+    @AuditComment = N'Records Added',
+    @AuditStartDate = @TransactionStartTime,
+    @AuditCompletionDate = @TransactionEndTime,
+    @AuditType = 'Audit';
+    EXEC InsurerAnalyticsSupport.CreateAuditRecord
+    @JobType = N'Claims',
+    @ExtractRunID = @ExtractRunID,
+    @AuditItem = N'BaseLoadFactsAndDimensions',
+    @AuditSubItem = N'Bridge Claimant Client',
+    @AuditStatus = N'SUCCESS',
+    @AuditCount = @ChangedRecords,
+    @AuditComment = N'Changed Records',
+    @AuditStartDate = @TransactionStartTime,
+    @AuditCompletionDate = @TransactionEndTime,
+    @AuditType = 'Audit';
+
+    --*
+    --* client
+    --*
+
+    SELECT
+    ISNULL( SUM( IIF( CounterFlag = 'N', 1, 0 )),0 ) AS NewRecords,
+    ISNULL( SUM( IIF( CounterFlag = 'C', 1, 0 )),0 ) AS ChangedRecords,
+    ISNULL( SUM( IIF( CounterFlag = 'D', 1, 0 )),0 )+ ISNULL( SUM( IIF( CounterFlag = 'E', 1, 0 )),0 ) AS ExpiredSCD2Records,
+    ISNULL( @RecordsRead,0 ) AS RecordsRead
+      FROM InsurerAnalyticsCommonDimension.Vw__Client
+    DECLARE @ErrorMessage varchar( 2000 ) = NULL;
+
+/******* Updating the ClientLowestKey in Client__EXtension Table ******************/
+
+    SELECT * INTO #Clk
+      FROM( SELECT c.ClientID,
+                   c.clientcode,
+                   DENSE_RANK( )OVER( ORDER BY clientcode )AS ClientLowestKey
+              FROM InsurerAnalyticsCommonDimension.client c )a
+    
+    UPDATE ce
+    SET ce.ClientLowestKey = #clk.ClientLowestKey
+      FROM InsurerAnalyticsCommonDimension.Client__Extension ce INNER JOIN
+      #Clk
+           ON ce.ClientID = #Clk.ClientID
+    
+    DROP TABLE #Clk
+
+   ------------=================================================================================---------------
+
+    COMMIT TRAN ALL_OR_NOTHING
+END TRY
+BEGIN CATCH
+    IF XACT_STATE( ) = -1
+        BEGIN
+            ROLLBACK TRAN ALL_OR_NOTHING
+
+            -- Set Audit Counts
+
+            SELECT
+            0 NewRecords,
+            0 ChangedRecords,
+            0 ExpiredSCD2Records,
+            ISNULL( @RecordsRead,0 ) AS RecordsRead
+        END
+    ELSE
+        BEGIN IF XACT_STATE( ) = 1
+                  BEGIN
+                      COMMIT TRAN ALL_OR_NOTHING
+                  END
+        END
+    SET @ErrorMessage = '(error: '
+    +
+    CONVERT( varchar, ERROR_NUMBER( ))
+    +
+    ', line: '
+    +
+    CONVERT( varchar, ERROR_LINE( ))
+    +
+    ') '
+    + ERROR_MESSAGE( )
+END CATCH
+BEGIN
+    IF @ErrorMessage IS NOT NULL
+        BEGIN
+            THROW  100000, @ErrorMessage, 16
+        END
+    ELSE
+        BEGIN
+            RETURN 0
+        END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[CounterFlag]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@ExtractRunID]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@RecordsRead]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalClaimantID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[PolicyHolderID]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[ClaimantFullName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OriginalClaimantID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[ClaimType]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OriginalHomeID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeAddressLine1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeAddressLine2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCityName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCountyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeStateName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCountryName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomePostalCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OriginalBusinessID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessAddressLine1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessAddressLine2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCityName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCountyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessStateName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCountryName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessPostalcode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OriginalOtherID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherAddressLine1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherAddressLine2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCityName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCountyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherStateName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCountryName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherPostalCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeGeoMapCode1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeGeoMapCode2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeGeoMapCode3]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeGeoMapCode4]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessGeoMapCode1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessGeoMapCode2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessGeoMapCode3]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessGeoMapCode4]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherGeoMapCode1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherGeoMapCode2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherGeoMapCode3]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherGeoMapCode4]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeLatitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeLongitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessLatitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessLongitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherLatitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherLongitude]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[ClaimType]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OriginalClaimantID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[PolicyHolderID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[ClaimantFullName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[ClaimType]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OriginalHomeID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeAddressLine1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeAddressLine2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCityName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCountyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeStateName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCountryName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomePostalCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OriginalBusinessID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessAddressLine1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessAddressLine2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCityName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCountyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessStateName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCountryName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessPostalcode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OriginalOtherID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherAddressLine1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherAddressLine2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCityName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCountyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherStateName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCountryName]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherPostalCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeGeoMapCode1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeGeoMapCode2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeGeoMapCode3]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeGeoMapCode4]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessGeoMapCode1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessGeoMapCode2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessGeoMapCode3]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessGeoMapCode4]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherGeoMapCode1]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherGeoMapCode2]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherGeoMapCode3]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherGeoMapCode4]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeLatitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeLongitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessLatitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessLongitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherLatitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherLongitude]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[ClaimType]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalClaimantID]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyType]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyTypeCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalClaimantID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalClaimantID]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyType]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyTypeCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalClaimantID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[OriginalClaimantID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[ClaimNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimNumber]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[PartyTypeCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyTypeCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[ClientID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[ClaimNumber]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[OriginalClaimantID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[OriginalClientID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[PartyTypeCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[PartyType]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsClaimsDimension].[BridgeClaimantClient].[CounterFlag]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyTypeCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyType]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@NewRecords]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@ChangedRecords]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@JobType]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@ExtractRunID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditItem]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditSubItem]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditStatus]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditCount]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditComment]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditStartDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditCompletionDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[CreateAuditRecord].[@AuditType]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Client]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Client].[ClientID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Client].[ClientCode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Client].[ClientCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsCommonDimension].[Client__Extension]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#Clk]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[ClientID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#Clk].[ClientID]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsCommonDimension].[Client__Extension].[ClientLowestKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#Clk].[ClientLowestKey]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[Priority]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalClaimantID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyTypeCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimantFullName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalHomeID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomePostalCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalBusinessID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessPostalcode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalOtherID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherPostalCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClientID]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport].[DeriveGeoMapCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[Priority]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[Priority]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OriginalClaimantID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalClaimantID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[PolicyNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyNumber]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[PolicyHolderID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[ClaimNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimNumber]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[ClaimType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimType]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[PartyTypeCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyTypeCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[PartyType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyType]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[ClaimantFullName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimantFullName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OriginalHomeID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalHomeID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeAddressLine1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeAddressLine2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCityCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCityName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeStateCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeStateName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomePostalCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomePostalCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountryCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountryName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountyCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountyName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeLatitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeLongitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OriginalBusinessID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalBusinessID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessAddressLine1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessAddressLine2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCityCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCityName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessStateCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessStateName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessPostalcode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessPostalcode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountryCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountryName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountyCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountyName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessLatitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessLongitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OriginalOtherID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalOtherID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherAddressLine1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherAddressLine2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCityCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCityName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherStateCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherStateName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountyCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountyName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherPostalCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherPostalCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountryCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountryName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherLatitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherLongitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[ClientID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClientID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode3]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[HomeGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode4]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode3]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[BusinessGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode4]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode3]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[OtherGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode4]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNotNull].[RowNum]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[Priority]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[Priority]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OriginalClaimantID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalClaimantID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[PolicyNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyNumber]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[PolicyHolderID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PolicyHolderID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[ClaimNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimNumber]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[ClaimType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimType]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[PartyTypeCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyTypeCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[PartyType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[PartyType]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[ClaimantFullName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClaimantFullName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OriginalHomeID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalHomeID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeAddressLine1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeAddressLine2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCityCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCityName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeStateCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeStateName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomePostalCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomePostalCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountryCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountryName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountyCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeCountyName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeLatitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeLongitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OriginalBusinessID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalBusinessID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessAddressLine1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessAddressLine2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCityCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCityName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessStateCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessStateName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessPostalcode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessPostalcode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountryCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountryName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountyCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessCountyName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessLatitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessLongitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OriginalOtherID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OriginalOtherID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherAddressLine1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherAddressLine1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherAddressLine2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherAddressLine2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCityCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCityCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCityName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCityName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherStateCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherStateCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherStateName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherStateName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCountyCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountyCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCountyName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountyName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherPostalCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherPostalCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCountryCode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountryCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherCountryName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherCountryName]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherLatitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherLatitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherLongitude]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherLongitude]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[ClientID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[ClientID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode3]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[HomeGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[HomeGeoMapCode4]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode3]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[BusinessGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[BusinessGeoMapCode4]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherGeoMapCode1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherGeoMapCode2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherGeoMapCode3]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode3]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[OtherGeoMapCode4]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#ClaimsClientDimension].[OtherGeoMapCode4]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#DistinctClientPolicyNull].[RowNum]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#Clk]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#Clk].[ClientID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Client].[ClientID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#Clk].[clientcode]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsCommonDimension].[Client].[ClientCode]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[#Clk].[ClientLowestKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@ExtractRunID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@NewRecords]">
+						<Property Name="IsOutput" Value="True" />
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@ChangedRecords]">
+						<Property Name="IsOutput" Value="True" />
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@ExpiredSCD2Records]">
+						<Property Name="IsOutput" Value="True" />
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension].[@RecordsRead]">
+						<Property Name="IsOutput" Value="True" />
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="InsurerAnalyticsDataWarehouse.dacpac" Name="[InsurerAnalyticsSupport]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="4" />
+				<Property Name="Length" Value="33104" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;CREATE PROCEDURE [InsurerAnalyticsSupport].[ProcessClaimsClientDimension__Extension]&#xD;&#xA;@ExtractRunID nvarchar( 10 ),&#xD;&#xA;@NewRecords int = 0 OUTPUT,&#xD;&#xA;@ChangedRecords int = 0 OUTPUT,&#xD;&#xA;@ExpiredSCD2Records int = 0 OUTPUT,&#xD;&#xA;@RecordsRead int = 0 OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 	</Model>
 </DataSchemaModel>
