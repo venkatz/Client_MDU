@@ -61,6 +61,9 @@
     <Folder Include="Properties" />
     <Folder Include="InsurerAnalyticsClaimsStaging" />
     <Folder Include="InsurerAnalyticsCommonDimension" />
+    <Folder Include="PostDeploymentScript" />
+    <Folder Include="InsurerAnalyticsSupport" />
+    <Folder Include="InsurerAnalyticsClaimsFact" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="..\..\..\ETL\dacpac\InsurerAnalyticsDataWarehouse.dacpac">
@@ -82,7 +85,16 @@
   <ItemGroup>
     <Build Include="InsurerAnalyticsClaimsStaging\ClaimantStagingTable__Extension.sql" />
     <Build Include="InsurerAnalyticsCommonDimension\Client__Extension.sql" />
-    <Build Include="InsurerAnalyticsClaimsStaging\VW__ClaimantStagingTable.sql" />
-    <Build Include="InsurerAnalyticsCommonDimension\VW__Client.sql" />
+    <Build Include="InsurerAnalyticsSupport\ProcessClaimsClientDimension__Extension.sql" />
+    <None Include="PostDeploymentScript\LoadStagingTableandColumn.sql" />
+    <Build Include="InsurerAnalyticsClaimsFact\MonthlyClaimsFactPeriodicSnapshot.sql" />
+    <Build Include="InsurerAnalyticsSupport\MonthlyPeriodicSnapshotFact.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PostDeploymentScript\BuildExtensionTriggersAndViews.sql" />
+    <None Include="PostDeploymentScript\FactAndDimensionDefinition.sql" />
+    <PostDeploy Include="PostDeploymentScript\Parameter.sq_.sql" />
+    <None Include="PostDeploymentScript\ExtractDefinition.sql" />
+    <None Include="PostDeploymentScript\ParameterTable.sql" />
   </ItemGroup>
 </Project>
